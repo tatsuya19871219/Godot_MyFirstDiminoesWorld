@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5ax831drsf74"]
+
+[ext_resource type="Script" path="res://domino.gd" id="1_7kk0c"]
+[ext_resource type="AudioStream" uid="uid://1c3la44621hw" path="res://audio_resources/決定ボタンを押す7.mp3" id="2_j0vpl"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_72v0m"]
+friction = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tiifj"]
+cull_mode = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rifyq"]
+next_pass = SubResource("StandardMaterial3D_tiifj")
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.5
+grow = true
+grow_amount = -0.02
+
+[sub_resource type="BoxMesh" id="BoxMesh_wt4q6"]
+material = SubResource("StandardMaterial3D_rifyq")
+size = Vector3(0.2, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_twhuc"]
+size = Vector3(0.2, 2, 1)
+
+[node name="Domino" type="RigidBody3D"]
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 1, 0)
+physics_material_override = SubResource("PhysicsMaterial_72v0m")
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_7kk0c")
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wt4q6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_twhuc")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+stream = ExtResource("2_j0vpl")
+volume_db = -1.0
+max_db = 1.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

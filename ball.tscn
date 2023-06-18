@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgbra8ib8lm7e"]
+
+[ext_resource type="Material" uid="uid://kp4kk7ujn4i7" path="res://materials/ball_material.tres" id="1_t2mij"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_wrmgw"]
+material = ExtResource("1_t2mij")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_imqlu"]
+
+[node name="Ball" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_wrmgw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_imqlu")

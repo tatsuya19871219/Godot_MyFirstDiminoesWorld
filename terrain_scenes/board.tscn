@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://8p4phtsw2s2m"]
+
+[ext_resource type="Script" path="res://terrain_scenes/board.gd" id="1_e58ur"]
+[ext_resource type="Material" uid="uid://cw2opw6mkuymc" path="res://materials/static_structure_material.tres" id="2_o3rhy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qsjvr"]
+material = ExtResource("2_o3rhy")
+size = Vector3(3, 0.5, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7lvvw"]
+size = Vector3(3, 0.5, 2)
+
+[node name="Board" type="StaticBody3D"]
+script = ExtResource("1_e58ur")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.25, 0)
+mesh = SubResource("BoxMesh_qsjvr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.25, 0)
+shape = SubResource("BoxShape3D_7lvvw")

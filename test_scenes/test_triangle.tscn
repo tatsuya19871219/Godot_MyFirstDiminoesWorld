@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://ptnv0l6b1yio"]
+
+[ext_resource type="Script" path="res://domino_placing_scripts/domino_triangle.gd" id="1_2rm6b"]
+[ext_resource type="PackedScene" uid="uid://b5ax831drsf74" path="res://domino.tscn" id="2_1a2cd"]
+
+[node name="TestTriangle" type="Node"]
+
+[node name="Triangle" type="Node3D" parent="."]
+script = ExtResource("1_2rm6b")
+domino_scene = ExtResource("2_1a2cd")
+domino_albedo_color = Color(0, 1, 1, 1)
+domino_interval = 1.0
+domino_lines = 9
+margin_size = 0.1
+
+[node name="Marker3D" type="Marker3D" parent="Triangle"]
+
+[connection signal="body_entered" from="Triangle/Marker3D/Domino" to="Triangle/Marker3D/Domino" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61294" to="Triangle/Marker3D/@Domino@61294" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61295" to="Triangle/Marker3D/@Domino@61295" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61296" to="Triangle/Marker3D/@Domino@61296" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61297" to="Triangle/Marker3D/@Domino@61297" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61298" to="Triangle/Marker3D/@Domino@61298" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61299" to="Triangle/Marker3D/@Domino@61299" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61300" to="Triangle/Marker3D/@Domino@61300" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61301" to="Triangle/Marker3D/@Domino@61301" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61302" to="Triangle/Marker3D/@Domino@61302" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61303" to="Triangle/Marker3D/@Domino@61303" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61304" to="Triangle/Marker3D/@Domino@61304" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61305" to="Triangle/Marker3D/@Domino@61305" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61306" to="Triangle/Marker3D/@Domino@61306" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61307" to="Triangle/Marker3D/@Domino@61307" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61308" to="Triangle/Marker3D/@Domino@61308" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61309" to="Triangle/Marker3D/@Domino@61309" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61310" to="Triangle/Marker3D/@Domino@61310" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61311" to="Triangle/Marker3D/@Domino@61311" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61312" to="Triangle/Marker3D/@Domino@61312" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61313" to="Triangle/Marker3D/@Domino@61313" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61314" to="Triangle/Marker3D/@Domino@61314" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61315" to="Triangle/Marker3D/@Domino@61315" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61316" to="Triangle/Marker3D/@Domino@61316" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61317" to="Triangle/Marker3D/@Domino@61317" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61318" to="Triangle/Marker3D/@Domino@61318" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61319" to="Triangle/Marker3D/@Domino@61319" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61320" to="Triangle/Marker3D/@Domino@61320" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61321" to="Triangle/Marker3D/@Domino@61321" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61322" to="Triangle/Marker3D/@Domino@61322" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61323" to="Triangle/Marker3D/@Domino@61323" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61324" to="Triangle/Marker3D/@Domino@61324" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61325" to="Triangle/Marker3D/@Domino@61325" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61326" to="Triangle/Marker3D/@Domino@61326" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61327" to="Triangle/Marker3D/@Domino@61327" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61328" to="Triangle/Marker3D/@Domino@61328" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61329" to="Triangle/Marker3D/@Domino@61329" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61330" to="Triangle/Marker3D/@Domino@61330" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61331" to="Triangle/Marker3D/@Domino@61331" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61332" to="Triangle/Marker3D/@Domino@61332" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61333" to="Triangle/Marker3D/@Domino@61333" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61334" to="Triangle/Marker3D/@Domino@61334" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61335" to="Triangle/Marker3D/@Domino@61335" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61336" to="Triangle/Marker3D/@Domino@61336" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Triangle/Marker3D/@Domino@61337" to="Triangle/Marker3D/@Domino@61337" method="_on_body_entered" flags=18]

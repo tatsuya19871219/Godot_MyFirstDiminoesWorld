@@ -1,0 +1,118 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm7m4gxhqlooa"]
+
+[ext_resource type="Script" path="res://domino_placing_scripts/domino_curve.gd" id="1_0biu7"]
+[ext_resource type="PackedScene" uid="uid://b5ax831drsf74" path="res://domino.tscn" id="2_dbf15"]
+
+[sub_resource type="Curve3D" id="Curve3D_16ib7"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_b4nqr"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 10, 0, 2, 0, 0, 1, 0, 0, -1, 12, 0, 0, 1, 0, 0, 0, 0, 0, 10, 0, -2, 0, 0, 0, 0, 0, 0, 0, 0, -2),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="TestCurve" type="Node"]
+
+[node name="Line" type="Node3D" parent="."]
+script = ExtResource("1_0biu7")
+domino_scene = ExtResource("2_dbf15")
+domino_albedo_color = Color(0, 1, 0, 1)
+
+[node name="DominoPath" type="Path3D" parent="Line"]
+curve = SubResource("Curve3D_16ib7")
+
+[node name="DominoLocation" type="PathFollow3D" parent="Line/DominoPath"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 0, 0)
+progress = 10.0
+
+[node name="Curve" type="Node3D" parent="."]
+script = ExtResource("1_0biu7")
+domino_scene = ExtResource("2_dbf15")
+
+[node name="DominoPath" type="Path3D" parent="Curve"]
+curve = SubResource("Curve3D_b4nqr")
+
+[node name="DominoLocation" type="PathFollow3D" parent="Curve/DominoPath"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -2)
+progress = 26.193
+
+[connection signal="body_entered" from="Line/Domino" to="Line/Domino" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60398" to="Line/@Domino@60398" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60399" to="Line/@Domino@60399" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60400" to="Line/@Domino@60400" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60401" to="Line/@Domino@60401" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60402" to="Line/@Domino@60402" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60403" to="Line/@Domino@60403" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60404" to="Line/@Domino@60404" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60405" to="Line/@Domino@60405" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60406" to="Line/@Domino@60406" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60407" to="Line/@Domino@60407" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60408" to="Line/@Domino@60408" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60409" to="Line/@Domino@60409" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60410" to="Line/@Domino@60410" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60411" to="Line/@Domino@60411" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60412" to="Line/@Domino@60412" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60413" to="Line/@Domino@60413" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60414" to="Line/@Domino@60414" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60415" to="Line/@Domino@60415" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60416" to="Line/@Domino@60416" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Line/@Domino@60417" to="Line/@Domino@60417" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/Domino" to="Curve/Domino" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60418" to="Curve/@Domino@60418" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60419" to="Curve/@Domino@60419" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60420" to="Curve/@Domino@60420" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60421" to="Curve/@Domino@60421" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60422" to="Curve/@Domino@60422" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60423" to="Curve/@Domino@60423" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60424" to="Curve/@Domino@60424" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60425" to="Curve/@Domino@60425" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60426" to="Curve/@Domino@60426" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60427" to="Curve/@Domino@60427" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60428" to="Curve/@Domino@60428" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60429" to="Curve/@Domino@60429" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60430" to="Curve/@Domino@60430" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60431" to="Curve/@Domino@60431" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60432" to="Curve/@Domino@60432" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60433" to="Curve/@Domino@60433" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60434" to="Curve/@Domino@60434" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60435" to="Curve/@Domino@60435" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60436" to="Curve/@Domino@60436" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60437" to="Curve/@Domino@60437" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60438" to="Curve/@Domino@60438" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60439" to="Curve/@Domino@60439" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60440" to="Curve/@Domino@60440" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60441" to="Curve/@Domino@60441" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60442" to="Curve/@Domino@60442" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60443" to="Curve/@Domino@60443" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60444" to="Curve/@Domino@60444" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60445" to="Curve/@Domino@60445" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60446" to="Curve/@Domino@60446" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60447" to="Curve/@Domino@60447" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60448" to="Curve/@Domino@60448" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60449" to="Curve/@Domino@60449" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60450" to="Curve/@Domino@60450" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60451" to="Curve/@Domino@60451" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60452" to="Curve/@Domino@60452" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60453" to="Curve/@Domino@60453" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60454" to="Curve/@Domino@60454" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60455" to="Curve/@Domino@60455" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60456" to="Curve/@Domino@60456" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60457" to="Curve/@Domino@60457" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60458" to="Curve/@Domino@60458" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60459" to="Curve/@Domino@60459" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60460" to="Curve/@Domino@60460" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60461" to="Curve/@Domino@60461" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60462" to="Curve/@Domino@60462" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60463" to="Curve/@Domino@60463" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60464" to="Curve/@Domino@60464" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60465" to="Curve/@Domino@60465" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60466" to="Curve/@Domino@60466" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60467" to="Curve/@Domino@60467" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60468" to="Curve/@Domino@60468" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@60469" to="Curve/@Domino@60469" method="_on_body_entered" flags=18]

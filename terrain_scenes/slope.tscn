@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdhje41hlb7pg"]
+
+[ext_resource type="Script" path="res://terrain_scenes/slope.gd" id="1_ppdf5"]
+[ext_resource type="Material" uid="uid://cw2opw6mkuymc" path="res://materials/static_structure_material.tres" id="2_1lspl"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_bh5wi"]
+material = ExtResource("2_1lspl")
+left_to_right = 1.0
+size = Vector3(3, 2, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0kfab"]
+points = PackedVector3Array(0, 0, -0.5, 0, 0, 0.5, 3, 0, -0.5, 3, 0, 0.5, 3, 2, -0.5, 3, 2, 0.5)
+
+[node name="Slope" type="StaticBody3D"]
+script = ExtResource("1_ppdf5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 0)
+mesh = SubResource("PrismMesh_bh5wi")
+
+[node name="CollisionPolygon3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_0kfab")

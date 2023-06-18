@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://duxcl5ebhhhph"]
+
+[ext_resource type="Script" path="res://domino_placing_scripts/domino_tower.gd" id="1_jwn4d"]
+[ext_resource type="PackedScene" uid="uid://b5ax831drsf74" path="res://domino.tscn" id="2_d75xe"]
+[ext_resource type="PackedScene" uid="uid://diq3poyoney0i" path="res://terrain_scenes/ground.tscn" id="3_7h3hj"]
+
+[node name="TestTower" type="Node"]
+
+[node name="Tower" type="Node3D" parent="."]
+script = ExtResource("1_jwn4d")
+domino_scene = ExtResource("2_d75xe")
+tower_height = 6
+
+[node name="Marker3D" type="Marker3D" parent="Tower"]
+
+[node name="Ground" parent="." instance=ExtResource("3_7h3hj")]
+width = 100.0
+depth = 100.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 24, 9, 10)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26, 20)
+
+[connection signal="body_entered" from="Tower/Marker3D/Domino" to="Tower/Marker3D/Domino" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39815" to="Tower/Marker3D/@Domino@39815" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39816" to="Tower/Marker3D/@Domino@39816" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39817" to="Tower/Marker3D/@Domino@39817" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39818" to="Tower/Marker3D/@Domino@39818" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39819" to="Tower/Marker3D/@Domino@39819" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39820" to="Tower/Marker3D/@Domino@39820" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39821" to="Tower/Marker3D/@Domino@39821" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39822" to="Tower/Marker3D/@Domino@39822" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39823" to="Tower/Marker3D/@Domino@39823" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39824" to="Tower/Marker3D/@Domino@39824" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39825" to="Tower/Marker3D/@Domino@39825" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39826" to="Tower/Marker3D/@Domino@39826" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39827" to="Tower/Marker3D/@Domino@39827" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39828" to="Tower/Marker3D/@Domino@39828" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39829" to="Tower/Marker3D/@Domino@39829" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39830" to="Tower/Marker3D/@Domino@39830" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39831" to="Tower/Marker3D/@Domino@39831" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39832" to="Tower/Marker3D/@Domino@39832" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39833" to="Tower/Marker3D/@Domino@39833" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39834" to="Tower/Marker3D/@Domino@39834" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39835" to="Tower/Marker3D/@Domino@39835" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39836" to="Tower/Marker3D/@Domino@39836" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39837" to="Tower/Marker3D/@Domino@39837" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39838" to="Tower/Marker3D/@Domino@39838" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39839" to="Tower/Marker3D/@Domino@39839" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39840" to="Tower/Marker3D/@Domino@39840" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39841" to="Tower/Marker3D/@Domino@39841" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39842" to="Tower/Marker3D/@Domino@39842" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39843" to="Tower/Marker3D/@Domino@39843" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39844" to="Tower/Marker3D/@Domino@39844" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39845" to="Tower/Marker3D/@Domino@39845" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39846" to="Tower/Marker3D/@Domino@39846" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39847" to="Tower/Marker3D/@Domino@39847" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39848" to="Tower/Marker3D/@Domino@39848" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39849" to="Tower/Marker3D/@Domino@39849" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39850" to="Tower/Marker3D/@Domino@39850" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39851" to="Tower/Marker3D/@Domino@39851" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39852" to="Tower/Marker3D/@Domino@39852" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39853" to="Tower/Marker3D/@Domino@39853" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39854" to="Tower/Marker3D/@Domino@39854" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39855" to="Tower/Marker3D/@Domino@39855" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39856" to="Tower/Marker3D/@Domino@39856" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39857" to="Tower/Marker3D/@Domino@39857" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39858" to="Tower/Marker3D/@Domino@39858" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39859" to="Tower/Marker3D/@Domino@39859" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39860" to="Tower/Marker3D/@Domino@39860" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Tower/Marker3D/@Domino@39861" to="Tower/Marker3D/@Domino@39861" method="_on_body_entered" flags=18]

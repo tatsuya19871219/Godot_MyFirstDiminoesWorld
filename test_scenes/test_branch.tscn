@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkgdfrrppgc88"]
+
+[ext_resource type="Script" path="res://domino_placing_scripts/domino_branch.gd" id="1_swcdv"]
+[ext_resource type="PackedScene" uid="uid://b5ax831drsf74" path="res://domino.tscn" id="2_ck10p"]
+[ext_resource type="Script" path="res://domino_placing_scripts/domino_curve.gd" id="3_3j4mr"]
+
+[sub_resource type="Curve3D" id="Curve3D_toop8"]
+_data = {
+"points": PackedVector3Array(-2, 0, 2, 2, 0, -2, -8, 0, 3, -2, 0, -2, 2, 0, 2, 0, 0, 3),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="TestBranch" type="Node"]
+
+[node name="Branch1" type="Node3D" parent="."]
+script = ExtResource("1_swcdv")
+domino_scene = ExtResource("2_ck10p")
+margin_size = 0.15
+
+[node name="Marker3D" type="Marker3D" parent="Branch1"]
+
+[node name="Branch2" type="Node3D" parent="."]
+script = ExtResource("1_swcdv")
+domino_scene = ExtResource("2_ck10p")
+branch_angle = 3.142
+margin_size = 0.15
+
+[node name="Marker3D" type="Marker3D" parent="Branch2"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, -3)
+
+[node name="Branch3" type="Node3D" parent="."]
+script = ExtResource("1_swcdv")
+domino_scene = ExtResource("2_ck10p")
+branch_angle = 1.571
+margin_size = 0.15
+last_domino_location_path = NodePath("../Curve/DominoPath/DominoLocation")
+
+[node name="Marker3D" type="Marker3D" parent="Branch3"]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0, 0, 3)
+
+[node name="Curve" type="Node3D" parent="."]
+script = ExtResource("3_3j4mr")
+domino_scene = ExtResource("2_ck10p")
+
+[node name="DominoPath" type="Path3D" parent="Curve"]
+curve = SubResource("Curve3D_toop8")
+
+[node name="DominoLocation" type="PathFollow3D" parent="Curve/DominoPath"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 3)
+progress = 8.7615
+
+[connection signal="body_entered" from="Branch1/Marker3D/Domino" to="Branch1/Marker3D/Domino" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Branch1/Marker3D/@Domino@59706" to="Branch1/Marker3D/@Domino@59706" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Branch2/Marker3D/Domino" to="Branch2/Marker3D/Domino" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Branch2/Marker3D/@Domino@59707" to="Branch2/Marker3D/@Domino@59707" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Branch3/Marker3D/Domino" to="Branch3/Marker3D/Domino" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Branch3/Marker3D/@Domino@59708" to="Branch3/Marker3D/@Domino@59708" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/Domino" to="Curve/Domino" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59709" to="Curve/@Domino@59709" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59710" to="Curve/@Domino@59710" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59711" to="Curve/@Domino@59711" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59712" to="Curve/@Domino@59712" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59713" to="Curve/@Domino@59713" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59714" to="Curve/@Domino@59714" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59715" to="Curve/@Domino@59715" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59716" to="Curve/@Domino@59716" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59717" to="Curve/@Domino@59717" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59718" to="Curve/@Domino@59718" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59719" to="Curve/@Domino@59719" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59720" to="Curve/@Domino@59720" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59721" to="Curve/@Domino@59721" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59722" to="Curve/@Domino@59722" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59723" to="Curve/@Domino@59723" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59724" to="Curve/@Domino@59724" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="Curve/@Domino@59725" to="Curve/@Domino@59725" method="_on_body_entered" flags=18]

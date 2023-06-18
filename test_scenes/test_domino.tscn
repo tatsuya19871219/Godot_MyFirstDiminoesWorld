@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgbb2qr0xnuwm"]
+
+[ext_resource type="PackedScene" uid="uid://b5ax831drsf74" path="res://domino.tscn" id="1_vlrqi"]
+[ext_resource type="PackedScene" uid="uid://diq3poyoney0i" path="res://terrain_scenes/ground.tscn" id="2_7qy87"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8twri"]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nruv0"]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kxwvb"]
+friction = 0.5
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jow06"]
+friction = 0.5
+
+[sub_resource type="Environment" id="Environment_s51o2"]
+background_mode = 1
+background_color = Color(0.721569, 0.964706, 1, 1)
+
+[node name="TestDomino" type="Node"]
+
+[node name="Domino" parent="." instance=ExtResource("1_vlrqi")]
+physics_material_override = SubResource("PhysicsMaterial_8twri")
+
+[node name="Domino4" parent="." instance=ExtResource("1_vlrqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28498, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_nruv0")
+albedo_color_override = Color(1, 1, 1, 1)
+
+[node name="Domino2" parent="." instance=ExtResource("1_vlrqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16371, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_kxwvb")
+albedo_color_override = Color(1, 0, 1, 1)
+
+[node name="Domino3" parent="." instance=ExtResource("1_vlrqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57664, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_jow06")
+albedo_color_override = Color(0, 0, 1, 1)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.850775, -0.17035, 0.497155, -3.69196e-09, 0.946006, 0.324149, -0.525531, -0.275778, 0.804838, 5.7517, 4.25404, 8.39807)
+projection = 1
+size = 3.0
+
+[node name="Ground" parent="." instance=ExtResource("2_7qy87")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.865318, -0.391138, 0.313427, -0.501224, -0.675264, 0.541104, 0, -0.625324, -0.780365, 5.84931, 6.22278, -5.22351)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_s51o2")
